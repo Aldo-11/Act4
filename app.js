@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const path = require('path'); // Importa el módulo 'path'
+const path = require('path');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 
@@ -29,6 +29,12 @@ mongoose.connect(process.env.MONGODB_URI)
 // Rutas de la API
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
+
+// Middleware de manejo de errores
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: 'Algo salió mal en el servidor' });
+});
 
 // Puerto
 const PORT = process.env.PORT || 5000;

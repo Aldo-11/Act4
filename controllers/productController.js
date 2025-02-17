@@ -4,16 +4,22 @@ const Product = require('../models/Product');
 
 // Crear un nuevo producto
 const createProduct = async (req, res) => {
-    try {
-      const { nombre, precio, descripcion, cantidad } = req.body;
+  const { nombre, precio, descripcion, cantidad } = req.body;
+
+  // Validación en el backend
+  if (!nombre || !precio || !cantidad) {
+      return res.status(400).json({ error: 'Todos los campos son requeridos: nombre, precio y cantidad.' });
+  }
+
+  try {
       const newProduct = new Product({ nombre, precio, descripcion, cantidad });
       await newProduct.save();
       res.status(201).json(newProduct);
-    } catch (error) {
+  } catch (error) {
       console.error('Error al crear el producto:', error);
       res.status(500).json({ error: 'Error al crear el producto' });
-    }
-  };
+  }
+};
   
 // Obtener todos los productos
 const getProducts = async (req, res) => {

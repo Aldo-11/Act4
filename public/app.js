@@ -96,6 +96,12 @@ function addProduct() {
     const descripcion = document.getElementById('product-description').value;
     const cantidad = document.getElementById('product-quantity').value;
 
+    // Validación en el frontend
+    if (!nombre || !precio || !cantidad) {
+        alert('Por favor, completa los campos requeridos: nombre, precio y cantidad.');
+        return; // Detiene la función si falta algún campo requerido
+    }
+
     fetch(`${API_URL}/products`, {
         method: 'POST',
         headers: {
@@ -111,8 +117,8 @@ function addProduct() {
         return response.json();
     })
     .then(() => {
-        showProducts(); // Muestra los productos actualizados
-        clearProductFields(); // Limpia los campos de entrada
+        showProducts();  // Muestra los productos actualizados
+        clearProductFields();  // Limpia los campos después de agregar el producto
     })
     .catch(error => {
         console.error('Error al agregar el producto:', error);
