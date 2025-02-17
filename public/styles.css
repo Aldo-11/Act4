@@ -1,0 +1,117 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+input {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Contenedores */
+#login-container, #registro-container, #productos-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Lista de productos */
+#product-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#product-list li {
+    background-color: #ecf0f1;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#product-list li strong {
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+#product-list li em {
+    color: #7f8c8d;
+    display: block;
+    margin: 5px 0;
+}
+
+#product-list li button {
+    margin: 5px 5px 0 0;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Botones de editar y eliminar */
+#product-list li button:nth-child(1) {
+    background-color: #27ae60;
+}
+
+#product-list li button:nth-child(1):hover {
+    background-color: #219653;
+}
+
+#product-list li button:nth-child(2) {
+    background-color: #e74c3c;
+}
+
+#product-list li button:nth-child(2):hover {
+    background-color: #c0392b;
+}
+
+/* Mensajes de alerta */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.alert.success {
+    background-color: #2ecc71;
+}
+
+.alert.error {
+    background-color: #e74c3c;
+}

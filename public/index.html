@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestión de Productos</h1>
+    
+    <!-- Formulario de Registro -->
+    <div id="registro-container">
+        <h2>Registro</h2>
+        <input type="email" id="register-email" placeholder="Correo electrónico">
+        <input type="password" id="register-password" placeholder="Contraseña">
+        <button onclick="register()">Registrarse</button>
+    </div>
+
+    <!-- Formulario de Login -->
+    <div id="login-container">
+        <h2>Iniciar Sesión</h2>
+        <input type="email" id="login-email" placeholder="Correo electrónico">
+        <input type="password" id="login-password" placeholder="Contraseña">
+        <button onclick="login()">Ingresar</button>
+    </div>
+    
+<!-- public/index.html -->
+
+    <div id="productos-container" style="display: none;">
+        <h2>Productos</h2>
+        <input type="text" id="product-name" placeholder="Nombre del producto">
+        <input type="number" id="product-price" placeholder="Precio">
+        <input type="text" id="product-description" placeholder="Descripción">
+        <input type="number" id="product-quantity" placeholder="Cantidad">
+        <button onclick="addProduct()">Agregar Producto</button>
+        <button onclick="logout()">Cerrar Sesión</button>
+        
+        <h3>Lista de Productos</h3>
+        <ul id="product-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
